@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="../angular.js"></script>
+    <title>test3</title>
+  </head>
+  <body ng-controller="myController">
+    <p><input type="number" value="5" ng-model="model1"></p>
+    <p><input type="number" value="3" ng-model="model2"></p>
+    <p>{{total}}</p>
+    <script>
+      angular.module('myApp', [])
+        .controller('myController', ['$scope', function($scope, model1, model2, total){
+          $scope.total = model1 + model2;
+        }]);
+    </script>
+  </body>
+</html>
