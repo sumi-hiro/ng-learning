@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>ng-mousedown</title>
+    <script src="../angular.js"></script>
+  </head>
+  <body ng-controller="myController">
+    <p ng-mousedown="mousedown()" ng-style="myStyle">マウスダウンで文字が大きくなる</p>
+
+    <script>
+      angular.module('myApp',[]).controller('myController', ['$scope', function($scope){
+        $scope.mousedown = function() {
+          console.log('mousedown');
+          $scope.myStyle = { fontSize: 'x-large' };
+        }
+      }]);
+    </script>
+  </body>
+</html>

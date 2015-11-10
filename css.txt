@@ -1,0 +1,16 @@
+.test + a {
+
+}
+test要素に隣接（直後）のa要素
+
+
+.test ~ a {
+
+}
+test要素の後のa全て
+
+
+
+.test a:first-child {
+
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>inject</title>
+    <script src="../angular.js"></script>
+  </head>
+  <body ng-controller="myController">
+    <input type="number" ng-model="model1">
+    <input type="number" ng-model="model2">
+    <p>{{module.controller}}</p>
+    <script>
+      angular.module("myApp", [])
+        .controller('myController',['$scope', function(model1, model2){
+            return model1 + model2;
+        }]);
+        // myController.$inject=['$scope'];
+    </script>
+  </body>
+</html>

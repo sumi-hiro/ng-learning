@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>moduleTest</title>
+    <script src="../angular.js"></script>
+  </head>
+  <body >
+    <div ng-controller="myController">
+      <input type="number" ng-model="num1">
+      <input type="number" ng-model="num2">
+      <input type="button" value="クリック" ng-click="add(num1, num2)">
+      <p>{{num1}} + {{num2}} = {{total}}</p>
+
+    </div>
+    <script>
+      angular.module('myApp', [])
+        .controller('myController', ['$scope', function($scope){
+          $scope.total = "計算結果";
+          $scope.add = function(num1, num2){
+            $scope.total = num1 + num2;
+            return $scope.total;
+          }
+        }]);
+    </script>
+  </body>
+</html>
